@@ -1,0 +1,23 @@
+node_modules/
+dist/
+data/
+.env
+*.log
+.DS_Store
+
+# Sensitive files
+.env*
+*.pem
+*.key
+*credentials*
+*secret*
+_backups/
+*.db
+*.sqlite
+*.sqlite3
+
+# Local backup files
+*.backup*
+*.bak
+*.bak*
+*.backup*

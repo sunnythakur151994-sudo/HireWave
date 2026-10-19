@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+
+html, body, #root { height: 100%; }
+
+/* Ambient animated background used on Landing + Login */
+.bg-aurora {
+  background:
+    radial-gradient(1200px 600px at 20% -10%, rgba(18,215,255,0.25), transparent 60%),
+    radial-gradient(900px 500px at 90% 10%, rgba(28,108,220,0.20), transparent 60%),
+    radial-gradient(700px 500px at 50% 110%, rgba(82,168,255,0.12), transparent 60%),
+    #040c1a;
+  background-size: 200% 200%;
+  animation: aurora 18s ease-in-out infinite alternate;
+}
+@keyframes aurora {
+  0%   { background-position: 0% 50%, 100% 0%, 50% 100%, 0 0; }
+  100% { background-position: 100% 50%, 0% 100%, 50% 0%, 0 0; }
+}
+
+.float { animation: float 6s ease-in-out infinite; }
+.float-slow { animation: float 9s ease-in-out infinite; }
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg-aurora { animation: none; }
+  .float, .float-slow { animation: none; }
+  * { transition-duration: 0ms !important; animation-duration: 0ms !important; }
+}
+
+/* Thin scrollbars */
+*::-webkit-scrollbar { width: 10px; height: 10px; }
+*::-webkit-scrollbar-thumb { background: rgba(82,168,255,0.15); border-radius: 8px; }
+*::-webkit-scrollbar-thumb:hover { background: rgba(82,168,255,0.3); }
+
+body { background:#040c1a; color:#eaf5ff; }
